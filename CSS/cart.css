@@ -1,0 +1,95 @@
+.floating-cart {
+    position: fixed;
+    top: 100px; /* Khoảng cách từ đỉnh trang */
+    right: 30px; /* Khoảng cách từ cạnh phải */
+    background-color: #fcf9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.floating-cart img {
+    width: 50px;
+    height: 50px;
+}
+
+.item-count {
+    position: absolute;
+    top: -0px;
+    right: -0px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 14px;
+}
+.cartDetail {
+    position: fixed;       /* Đặt phần giỏ hàng cố định trên màn hình */
+    top: 80px;             /* Khoảng cách từ đỉnh, tăng giá trị này nếu muốn giỏ hàng xuống thấp hơn */
+    right: 10px;           /* Khoảng cách từ cạnh phải của màn hình */
+    width: 200px;          /* Đặt chiều rộng cố định cho giỏ hàng */
+    height: auto;          /* Chiều cao tự động để chứa tất cả sản phẩm */
+    z-index: 100;          /* Đảm bảo giỏ hàng hiển thị trên cùng */
+    background: #fff;      /* Màu nền cho giỏ hàng */
+    border: 1px solid #ccc;/* Viền giỏ hàng */
+    overflow-y: auto;      /* Cho phép cuộn nếu sản phẩm quá nhiều */
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng cho giỏ hàng */
+    display: none;
+}
+.cartDetail:hover {background-color: #f1f1f1}
+
+
+.floating-cart:hover .cartDetail {
+    display: block;
+}
+.cartDetail {
+    max-width: 600px; /* Hoặc chiều rộng nào bạn muốn */
+    margin: auto;
+    border-radius: 8px;
+}
+
+.cart-product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Khoảng cách giữa các sản phẩm */
+    border-bottom: 1px solid #ccc; /* Ngăn cách các sản phẩm */
+    padding-bottom: 10px;
+}
+
+.cart-product-img img {
+    max-width: 100px; /* Giới hạn kích thước hình ảnh */
+    margin-right: 10px;
+}
+
+.cart-product-info {
+    flex-grow: 1;
+}
+
+.cart-product-name {
+    font-weight: bold;
+}
+
+.cart-product-quantity,
+.cart-product-price {
+    margin-top: 5px;
+}
+
+.checkout-button {
+    background-color: #df7d15;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; 
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+}
+
+.checkout-button:hover {
+    background-color: #c77013; 
+}

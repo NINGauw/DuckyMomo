@@ -1,0 +1,82 @@
+
+
+.payment-container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+h2 {
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: smaller;
+}
+
+/* Thêm các định dạng khác cho các phần cụ thể ở đây */
+
+.pay-now-btn {
+    background-color: #d88f22;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pay-now-btn:hover {
+    background-color: #bd7d1c;
+}
+.product-detail {
+    display: flex;
+    align-items: flex-start; /* Cập nhật để căn chỉnh đầu trên */
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    flex-wrap: wrap; /* Cho phép nội dung bọc nếu cần */
+}
+
+.product-detail img {
+    width: 100px; /* Hoặc kích thước mong muốn */
+    height: auto;
+    margin-right: 15px;
+    flex-shrink: 0; /* Ngăn hình ảnh thu nhỏ */
+}
+
+.product-detail .product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+    flex-basis: 100%; /* Đảm bảo tên sản phẩm chiếm toàn bộ chiều rộng */
+}
+
+.product-detail .product-quantity,
+.product-detail .product-price {
+    font-size: 16px;
+    color: #333;
+    flex-basis: 50%; /* Mỗi phần tử chiếm 50% chiều rộng, đảm bảo chúng nằm trên hai dòng riêng biệt */
+}
+
+.logomomo {
+    width: 50px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

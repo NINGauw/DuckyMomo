@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ducky Momo</title>
+    <link rel="stylesheet" href="../CSS/popUp.css">
+    <link rel="stylesheet" href="../CSS/styleMenu.css">
+    <link rel="stylesheet" href="../CSS/cart.css">
+    <link rel="stylesheet" href="../CSS/product.css">
+    <link rel="stylesheet" href="../CSS/new.css">
+
+    <script src="../processJS/popUp.js"></script>
+    <script src="../processJS/sendEmail.js"></script>
+    <script src="../processJS/cart.js"></script>
+    <script>function selectSize(size) {
+        var buttons = document.getElementsByClassName('size-button');
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].classList.remove('active');
+        }
+      
+        var selectedButton = document.querySelector(`.size-button[onclick="selectSize('${size}')"]`);
+        selectedButton.classList.add('active');
+      }
+    </script>
+    <!--Lấy session người dùng-->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+      fetch('../severPHP/manageSession.php')
+        .then(response => response.json())
+        .then(data => {
+            var welcomeMessage = document.getElementById('welcomeMessage');
+            welcomeMessage.textContent = "Xin chào, " + data.username;
+        })
+        .catch(error => console.error('Error:', error));
+});
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <img src="../Photo/logo.png">
+            </div>
+            <nav>
+                <ul id="home">
+                    <li><a href="../view/index.html">Home</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#aboutUs">About</a></li>
+                    <li><a href="#" id="btn">Contact</a></li>
+                </ul>
+            <!-- Nội dung của Pop-Up contact -->
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="intro">Hãy cung cấp thông tin và chúng tôi sẽ liên hệ với bạn</p>
+                <form>
+                  <label>Tên:</label>
+                  <input type="text" name="name">
+                  <label>Email:</label>
+                  <input type="text" name="email">
+                  <label>Số điện thoại:</label>
+                  <input type="text" name="phone">
+                  <label>Địa chỉ:</label>
+                  <input type="text" name="address">
+                  <input type="button" value="Gửi thông tin"> 
+                </form>
+              </div>
+            </div>
+            <!-- Nội dung của pop-up hồ sơ-->
+            <div id="popUpHS" class="hoSo">
+              <div class="hoSo-content">
+                <span class="closehs">&times;</span>
+                <p class="intro">Hồ sơ người dùng</p>
+                <p>Nội dung người dùng (sẽ thêm sau)</p>
+              </div>
+            </div>
+            <!--Thanh menu-->
+            </nav>
+            <div class="dropdown">
+              <button class="dropbtn">Menu</button>
+              <div class="dropdown-content">
+                  <p id="welcomeMessage"></p>
+                  <a href="#profile" id="hoSo">Hồ sơ</a>
+                  <a href="#settings">Cài đặt</a>
+                  <a href="login.html">Đăng xuất</a>
+              </div>
+            </div>
+        </header>
+
+        <!--Nội dung blog-->
+        <section class="whats-new">
+            <h2 class="section-title">Blog</h2>
+        </section>
+        <div class="blog-post">
+            <img src="../Photo/blog1.png" alt="Header Image" class="blog-header-image">
+            <div class="blog-content">
+                <h1 class="blog-title">Bảo quản và vệ sinh</h1>
+                <p class="blog-date">Ngày Đăng: 01/01/2024</p>
+                <div class="blog-text">
+                    <p>
+                        Sở hữu một đôi giày ưa thích không chỉ là về phong cách, mà còn đề xuất đến bạn sự chăm sóc đặc biệt. Bài viết này sẽ cung cấp những bí quyết đơn giản nhưng hiệu quả để bảo quản và vệ sinh đúng cách cho đôi giày của bạn.
+                        <br>
+                            1. Chăm Sóc Ngay Từ Bước Đầu:
+                            Khi mới mua giày, hãy xem xét các hướng dẫn chăm sóc của nhãn hiệu. Một số loại giày có yêu cầu chăm sóc đặc biệt, và việc áp dụng ngay từ đầu sẽ giúp giữ cho chúng luôn mới mẻ.
+                        <br>    
+                            2. Bảo Quản Đúng Cách:
+                            Tránh ánh nắng trực tiếp: Đặt giày ở nơi thoáng mát và tránh tiếp xúc trực tiếp với ánh nắng mặt trời để tránh làm mất màu và làm yếu chất liệu.
+                            Để giữ hình dạng: Điều này có thể thực hiện bằng cách sử dụng cây giày hoặc đổ đầy giày bên trong bằng giấy bóng để giữ cho chúng không bị co hay biến dạng.
+                        <br>
+                            3. Làm Sạch Đúng Cách:
+                            Dùng bàn chải mềm: Bạn có thể sử dụng một bàn chải mềm để làm sạch bụi và bẩn trên bề mặt giày.
+                            Sử dụng dung dịch làm sạch phù hợp: Mỗi loại giày có thể yêu cầu loại dung dịch làm sạch khác nhau. Đảm bảo sử dụng sản phẩm phù hợp với chất liệu của đôi giày để tránh hại chúng.
+                        <br>
+                            4. Chăm Sóc Lót Chân:
+                            Thường xuyên thay lót chân: Lót chân thường xuyên hấp thụ mồ hôi và có thể trở nên mùi khá nhanh chóng. Thay đổi chúng thường xuyên để giữ cho giày luôn sạch sẽ và thoải mái.
+                        <br>
+                            5. Phòng Chống Nước và Bụi:
+                            Sử dụng chất phủ chống nước: Đối với giày da, việc sử dụng chất phủ chống nước sẽ giúp bảo vệ chúng khỏi tác động của nước mưa.
+                            Lưu ý khi đi trời mưa: Nếu không tránh khỏi việc đi trong thời tiết mưa, hãy giữ giày khô bằng cách sử dụng túi nhựa hoặc hộp giày chống nước.
+                            Với những bí quyết đơn giản nhưng hiệu quả này, bạn có thể giữ cho đôi giày của mình luôn sáng bóng và bền bỉ theo thời gian. Hãy nhớ rằng việc chăm sóc đúng cách không chỉ là để bảo vệ giày, mà còn là để thể hiện tình yêu và tôn trọng đối với những đồ vật bạn sở hữu.
+                    </p>
+                    <p>Tác giả: Lê Sỹ Đức Anh</p>
+                </div>
+            </div>
+        </div>
+        <!--Phần footer-->
+        <section class="newsletter">
+            <h2>Subscribe for Special Offers</h2>
+            <form id="subscribe-form">
+                <input type="email" placeholder="Nhập email" id="email" required>
+                <button onclick="event.preventDefault(); send()">Đăng ký</button>
+            </form>
+        </section>
+        <footer>
+            <div class="footer-content">
+                <p class="content" id="aboutUs">About Ducky Momo</p>
+                <p class="content" style="margin-left: 10px;
+                          margin-right: 10px;">
+                          Chào mừng bạn đến với Ducky Momo Shoes - nơi mang đến cho bạn phong cách và thoải mái trong từng bước chân. Chúng tôi tự hào về chất lượng và đa dạng của sản phẩm, cam kết đem lại trải nghiệm mua sắm tốt nhất. Hãy khám phá ngay!</p>
+                <p class="content">Contact Us</p>
+                <p class="content">Email: 20521066@gm.uit.edu.vn</p>
+                <p class="content">Phone: 0867164467</p>
+            </div>
+            <div class="footer-bottom">
+                <p class="content">© 2023 Ducky Momo. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

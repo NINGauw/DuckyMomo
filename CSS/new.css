@@ -1,0 +1,120 @@
+.whats-new {
+    text-align: center;
+    padding: 20px;
+}
+
+
+.section-title {
+    font-size: 24px;
+    position: relative;
+    display: inline-block; 
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    color: #3A3A3A;
+    font-size: 1.5em; 
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    padding: 0 10px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    z-index: 1;
+}
+
+.section-title:before,
+.section-title:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 50%; 
+    top: 50%;
+    background-color: black; 
+    z-index: -1; 
+}
+
+.section-title:before {
+    left: 0;
+    margin-left: -50%;
+}
+
+.section-title:after {
+    right: 0;
+    margin-right: -50%;
+}
+.blog-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.blog-item {
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgb(233, 233, 233);
+}
+
+.blog-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Bo tròn góc cho ảnh */
+}
+
+.blog-item p {
+    margin-top: 0px;
+    padding-top: 10px;
+    font-weight: bold;
+    background-color: rgb(233, 233, 233);
+    border-radius: 6px;
+}
+
+/* Hiệu ứng khi trỏ chuột vào */
+.blog-item:hover {
+    transform: scale(1.05); /* Phóng to thẻ div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm đổ bóng */
+}
+.blog-post {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.blog-header-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.blog-date {
+    font-style: italic;
+    color: #666; /* Màu xám nhẹ cho ngày đăng */
+    margin-bottom: 20px;
+}
+
+.blog-text p {
+    line-height: 1.6; /* Khoảng cách dòng cho dễ đọc */
+    text-align: justify; /* Căn đều hai bên */
+}
+.intro-section {
+    display: flex;
+    background-color: #c4c3c3; 
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .intro-part {
+    flex: 1;
+    padding: 10px;
+    color: rgb(72, 72, 72); 
+  }

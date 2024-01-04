@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../jquery-3.7.1.min.js"></script>
+        <script src="../processJS/signUp.js"></script>
+        
+        <link rel="stylesheet" href="../CSS/style.css">
+    </head>
+    <body>
+        <div class="login-container">
+            <form method="post">
+                <h2>Đăng ký</h2>
+                <label for="username">Tài khoản:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="name">Tên người dùng:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button id="submitButton" onclick="event.preventDefault(); submitSignUp()">Đăng ký</button>
+                <div id="register" onclick="signIn()"><a>Đăng nhập</a></div>
+            </form>
+            <div id="kq"></div>
+        </div>
+    </body>
+</html>

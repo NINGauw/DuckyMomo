@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../jquery-3.7.1.min.js"></script>
+        <script src="../processJS/login.js"></script>
+        
+        <link rel="stylesheet" href="../CSS/style.css">
+    </head>
+    <body>
+        <div class="login-container">
+            <form method="post">
+                <h2>Đăng nhập</h2>
+                <label for="username">Tài khoản:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button id="submitButton" onclick="event.preventDefault();submitLogin()">Đăng nhập</button>
+                <div id="register" onclick="signUp()"><a>Đăng ký</a></div>
+            </form>
+            <div id="kq"></div>
+        </div>
+    </body>
+</html>

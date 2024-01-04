@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ducky Momo</title>
+    <link rel="stylesheet" href="../CSS/popUp.css">
+    <link rel="stylesheet" href="../CSS/styleMenu.css">
+    <link rel="stylesheet" href="../CSS/cart.css">
+    <link rel="stylesheet" href="../CSS/payment.css">
+
+    <script src="../processJS/popUp.js"></script>
+    <script src="../processJS/cart.js"></script>
+    <script src="../processJS/checkOut.js"></script>
+    <script> document.addEventListener('DOMContentLoaded', function() {
+        updateProductInfo();
+    });</script>
+    <!--Lấy session người dùng-->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+      fetch('../severPHP/manageSession.php')
+        .then(response => response.json())
+        .then(data => {
+            var welcomeMessage = document.getElementById('welcomeMessage');
+            welcomeMessage.textContent = "Xin chào, " + data.username;
+        })
+        .catch(error => console.error('Error:', error));
+});
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <img src="../Photo/logo.png">
+            </div>
+            <nav>
+                <ul id="home">
+                    <li><a href="../view/index.html">Home</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#aboutUs">About</a></li>
+                    <li><a href="#" id="btn">Contact</a></li>
+                </ul>
+            <!-- Nội dung của Pop-Up contact -->
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="intro">Hãy cung cấp thông tin và chúng tôi sẽ liên hệ với bạn</p>
+                <form>
+                  <label>Tên:</label>
+                  <input type="text" name="name">
+                  <label>Email:</label>
+                  <input type="text" name="email">
+                  <label>Số điện thoại:</label>
+                  <input type="text" name="phone">
+                  <label>Địa chỉ:</label>
+                  <input type="text" name="address">
+                  <input type="button" value="Gửi thông tin"> 
+                </form>
+              </div>
+            </div>
+            <!-- Nội dung của pop-up hồ sơ-->
+            <div id="popUpHS" class="hoSo">
+              <div class="hoSo-content">
+                <span class="closehs">&times;</span>
+                <p class="intro">Hồ sơ người dùng</p>
+                <p>Nội dung người dùng (sẽ thêm sau)</p>
+              </div>
+            </div>
+            <!--Thanh menu-->
+            </nav>
+            <div class="dropdown">
+              <button class="dropbtn">Menu</button>
+              <div class="dropdown-content">
+                  <p id="welcomeMessage"></p>
+                  <a href="#profile" id="hoSo">Hồ sơ</a>
+                  <a href="#settings">Cài đặt</a>
+                  <a href="login.html">Đăng xuất</a>
+              </div>
+            </div>
+        </header>
+
+        <!--Phần thanh toán-->
+        <div class="payment-container">
+            <h3>Thanh toán</h3>
+            <div class="product-info">
+                <h2>Thông Tin Sản Phẩm</h2>
+            </div>
+            
+    
+            <div class="payment-method">
+                <h2>Phương Thức Thanh Toán</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img class="logomomo" src="../Photo/logomomo.png">
+                            <input type="radio" name="method-payment">
+                        </td>
+                        <td style="padding-left: 100px;">
+                            <img class="logomomo" src="../Photo/bank.png">
+                            <input type="radio" name="method-payment">
+                        </td>
+                        <td style="padding-left: 100px;">
+                            <img class="logomomo" src="../Photo/cod.png">
+                            <input type="radio" name="method-payment">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    
+            <div class="address-info">
+                <h2>Địa Chỉ Giao Hàng</h2>
+                <div class="form-group">
+                    <label for="fullName">Tên Người Nhận:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa Chỉ:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số Điện Thoại:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+    
+            <button type="submit" class="pay-now-btn" onclick="checkOutBut()">Thanh Toán</button>
+        </div>
+
+        <!--Phần footer-->
+        <footer>
+            <div class="footer-content">
+                <p class="content" id="aboutUs">About Ducky Momo</p>
+                <p class="content" style="margin-left: 10px;
+                          margin-right: 10px;">
+                          Chào mừng bạn đến với Ducky Momo Shoes - nơi mang đến cho bạn phong cách và thoải mái trong từng bước chân. Chúng tôi tự hào về chất lượng và đa dạng của sản phẩm, cam kết đem lại trải nghiệm mua sắm tốt nhất. Hãy khám phá ngay!</p>
+                <p class="content">Contact Us</p>
+                <p class="content">Email: 20521066@gm.uit.edu.vn</p>
+                <p class="content">Phone: 0867164467</p>
+            </div>
+            <div class="footer-bottom">
+                <p class="content">© 2023 Ducky Momo. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+
+</html>
